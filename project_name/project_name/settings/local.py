@@ -13,3 +13,11 @@ DATABASES = {
         'PORT': '',                 
     }
 }
+
+
+THIRDPARTY_APPS += [
+    'django_nose',
+]
+
+
+INSTALLED_APPS = DJANGO_APPS + THIRDPARTY_APPS + CUSTOM_APPS
