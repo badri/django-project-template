@@ -1,33 +1,18 @@
-{% load static future i18n %}{% get_static_prefix as STATIC_PREFIX %}<!DOCTYPE html>
+{% load i18n %}
+<!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en" manifest="{% url 'cache_manifest' %}"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" data-modal-container> <!--<![endif]-->
     <head>
-        <title>{{ Site.name }} {% block html-title %}/ {% endblock %}</title>
+        <title>{{ Site.name }} {% block title %}/ {% endblock %}</title>
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-touch-fullscreen" content="yes" />
 
-        <meta name="fragment" content="!" />
-
-        {% block head-meta %}
-        <meta name="description" content="{% block head_meta %}{% endblock %}">
-        <meta name="keywords" content="{% block head_keywords %}{% endblock %}">
-        <meta name="author" content="{% block head_author %}{% endblock %}">
-        {% endblock %}
-        {% block stylesheets %}
-        {% compress css %}
-        <link media="screen, projector, print" rel="stylesheet" type="text/css" href="{% static 'stylesheets/screen.css' %}" >
-        {% endcompress %}
-        <link media="print" rel="stylesheet" type="text/css" href="{% static 'stylesheets/print.css' %}" >
+        {% block css %}
         <!--[if IE]>
-            <link href="{{ STATIC_PREFIX }}/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+            <link href="{{ STATIC_URL }}stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
-        {% endblock %}
-        <script src="{{ STATIC_PREFIX }}javascripts/vendor/custom.modernizr.js"></script>
+        {% endblock css %}
+        <script src="{{ STATIC_URL }}js/vendor/custom.modernizr.js"></script>
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -37,8 +22,6 @@
             <div class="content">
                 {% block content %}{% endblock %}
             </div>
-            {% block site-footer %}
-            {% endblock %}
         </div>
         {% block scripts %}
         {% endblock %}

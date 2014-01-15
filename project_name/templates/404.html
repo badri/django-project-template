@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Page not found' %}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <section class="span12">
+
+	<h1>{% trans 'Oops!' %}</h1>
+
+	<p>{% trans "We're sorry, but the page you requested could not be found." %}</p>
+
+  </section>
+</div>
+{% endblock %}
