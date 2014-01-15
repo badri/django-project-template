@@ -77,15 +77,32 @@ ROOT_URLCONF = '{{ project_name }}.urls'
 
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
-INSTALLED_APPS = (
+DJANGO_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admin',
-)
+]
+
+
+THIRDPARTY_APPS = [
+    #'grappelli',
+    'django.contrib.admin',  # This has to be here because of Grappelli
+    'south',
+    #'userena',
+    'guardian',
+    #'taggit',
+    #'rest_framework',
+    #'django_nose',
+    'pipeline',
+]
+
+# add custom apps here
+CUSTOM_APPS = []
+
+INSTALLED_APPS = DJANGO_APPS + THIRDPARTY_APPS + CUSTOM_APPS
 
 LOGGING = {
     'version': 1,
@@ -110,3 +127,6 @@ LOGGING = {
         },
     }
 }
+
+# pipeline stuff
+from .pipeline import *
