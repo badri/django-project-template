@@ -7,6 +7,6 @@ Choice of tools:
 * Angular.js as the frontend MVW
 * coffeescript for writing js and SCSS for writing stylesheets. Both handled by [django-pipeline](https://github.com/cyberdelia/django-pipeline).
 
-This template was inspired by [Airtonix's](https://github.com/airtonix/django-project-template) and [Two Scoops](https://github.com/twoscoops/django-twoscoops-project) templates and is licensed under MIT.
+This template was inspired by [Airtonix's](https://github.com/airtonix/django-project-template) and [Two Scoops](https://github.com/twoscoops/django-twoscoops-project) templates and is MIT licensed.
 
-Contact me @lakshminp for any bugs.
+Contact me [@lakshminp](https://twitter.com/lakshminp) for any bugs.
