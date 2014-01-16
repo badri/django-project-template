@@ -6,6 +6,8 @@ MEDIA_ROOT = PROJECT_ROOT.child('media')
 
 STATIC_ROOT = PROJECT_ROOT.child('static')
 
+BOWER_COMPONENTS_ROOT = PROJECT_ROOT.child('components')
+
 STATICFILES_DIRS = (
     PROJECT_ROOT.child('assets')
 )
@@ -56,6 +58,7 @@ STATIC_URL = '/static/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
 )
 
 SECRET_KEY = r"{{ secret_key }}"
@@ -96,6 +99,7 @@ THIRDPARTY_APPS = [
     'taggit',
     'rest_framework',
     'pipeline',
+    'djangobower',
 ]
 
 # add custom apps here
@@ -129,3 +133,5 @@ LOGGING = {
 from .pipeline import *
 # user authentication stuff
 from .auth import *
+# bower components
+from .bower import *
