@@ -9,11 +9,11 @@ STATIC_ROOT = PROJECT_ROOT.child('static')
 BOWER_COMPONENTS_ROOT = PROJECT_ROOT.child('components')
 
 STATICFILES_DIRS = (
-    PROJECT_ROOT.child('assets')
+    PROJECT_ROOT.child('assets'),
 )
 
 TEMPLATE_DIRS = (
-    PROJECT_ROOT.child('templates')
+    PROJECT_ROOT.child('templates'),
 )
 
 DEBUG = False
@@ -61,7 +61,7 @@ STATICFILES_FINDERS = (
     'djangobower.finders.BowerFinder',
 )
 
-SECRET_KEY = r"{{ secret_key }}"
+SECRET_KEY = r"6e!=_4n%a(dmjbg!v8w6!bq^k)ho_7u&q0hp*t2dq%7cm%+2!w"
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -76,9 +76,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = '{{ project_name }}.urls'
+ROOT_URLCONF = 'kalvi.urls'
 
-WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+WSGI_APPLICATION = 'kalvi.wsgi.application'
 
 DJANGO_APPS = [
     'django.contrib.auth',
@@ -103,7 +103,9 @@ THIRDPARTY_APPS = [
 ]
 
 # add custom apps here
-CUSTOM_APPS = []
+CUSTOM_APPS = [
+    'accounts',
+]
 
 LOGGING = {
     'version': 1,

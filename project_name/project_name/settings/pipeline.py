@@ -26,7 +26,7 @@ PIPELINE_JS = {
           'js/application.js',
         ),
         'output_filename': 'js/stats.js',
-    }
+    },
     'quiz': {
         'source_filenames': (
           'js/question.coffee',

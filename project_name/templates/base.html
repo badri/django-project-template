@@ -1,6 +1,6 @@
 {% load i18n %}
+{% load static %}
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" manifest="{% url 'cache_manifest' %}"> <![endif]-->
     <head>
         <title>{{ Site.name }} {% block title %}/ {% endblock %}</title>
 
@@ -8,11 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
         {% block css %}
-        <!--[if IE]>
-            <link href="{{ STATIC_URL }}stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-        <![endif]-->
+        <link href="{% static 'foundation/css/foundation.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'foundation/css/normalize.css' %}" rel="stylesheet" type="text/css" />
         {% endblock css %}
-        <script src="{{ STATIC_URL }}js/vendor/custom.modernizr.js"></script>
+        <script src="{% static 'modernizr/modernizr.js' %}"></script>
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
